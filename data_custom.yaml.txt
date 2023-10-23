@@ -1,0 +1,6 @@
+train : C:\Users\91812\anaconda3\envs\yolov8_custom\train
+val: C:\Users\91812\anaconda3\envs\yolov8_custom\val
+
+nc : 1
+
+names:["tumor"]
