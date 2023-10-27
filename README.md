@@ -77,7 +77,8 @@ Calculate performance metrics such as precision, recall, F1-score, and accuracy 
 
 If the model performs well, you can deploy it for real-world use. This may involve integrating it into a medical imaging system or application for radiologists and doctors to use in clinical practice.
 
-![Uploading image.png…]()
+![image](https://github.com/JatinAllamsetty27/brain_tumor_yolov8/assets/78016929/e796feef-39bd-4878-abde-d3406cfb378c)
+
 
 
 ---
