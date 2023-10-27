@@ -71,6 +71,13 @@ Calculate performance metrics such as precision, recall, F1-score, and accuracy 
 
 
 
+### Prediction
+
+![image](https://github.com/JatinAllamsetty27/brain_tumor_yolov8/assets/78016929/d16d51ca-310e-4802-bce4-73c21243dbe7)
+
+
+
+
 
 
 ### Deployment
