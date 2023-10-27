@@ -10,6 +10,31 @@ Before you begin, make sure you have the following:
 - [YOLOv8 repository](https://github.com/ultralytics/yolov5) cloned to your local machine.
 - [labelImg](https://github.com/tzutalin/labelImg) installed for labeling the images.
 
+
+### Steps to be followed
+
+- Clone the YOLOv8 repository
+- git clone https://github.com/ultralytics/yolov8.git
+
+- Install dependencies
+- pip install -r requirements.txt
+
+- Run download_images.py to download brain scan images and save to a folder, e.g. /data/images
+- Use labelImg tool to manually label tumor locations in the images and export annotation XMLs
+- Add the labeled image folder path and details in data.yaml
+- Modify yolov8-custom.yaml for custom model architecture
+- Preprocess the images using preprocess.py
+- Train the YOLOv8 model on the brain tumor data:
+- python train.py --data data.yaml --cfg yolov8-custom.yaml --weights yolov8.pt
+
+- Evaluate the model on test data:
+- python test.py --weights runs/train/exp/weights/best.pt --data data.yaml --img 640
+
+- Perform inference on new images:
+- python detect.py --weights runs/train/exp/weights/best.pt --img 640 --conf 0.4 --source img1.png
+
+- Postprocess detections using postprocess.py
+
 ### Dataset Preparation
 
 1. Download the dataset of medical images containing brain scans with and without tumors. You can do this using the `download_images.py` script.
@@ -42,10 +67,19 @@ After obtaining predictions from the model, you may need to post-process the res
 
 Calculate performance metrics such as precision, recall, F1-score, and accuracy to assess the model's accuracy in detecting brain tumors.
 
+![image](https://github.com/JatinAllamsetty27/brain_tumor_yolov8/assets/78016929/28e26264-b956-49a7-be06-4b3089e5b8a4)
+
+
+
+
+
 ### Deployment
 
 If the model performs well, you can deploy it for real-world use. This may involve integrating it into a medical imaging system or application for radiologists and doctors to use in clinical practice.
 
+![Uploading image.png…]()
+
+
 ---
 
-Make sure to replace the placeholders like `path/to/your/data.yaml`, `path/to/your/yolov8-config.yaml`, and `yolov8.weights` with the actual paths and filenames relevant to your project. Additionally, provide any additional details or information specific to your project in the README file.
+
